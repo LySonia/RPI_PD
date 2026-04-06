@@ -109,7 +109,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  c++;
-	  printf("%d\n", c);
+	  printf("Hello World! :O) %d\n", c);
   }
   /* USER CODE END 3 */
 }
@@ -367,6 +367,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+// Code below nrequired for serial printing
 int __io_putchar(int ch)
 {
  // Write character to ITM ch.0

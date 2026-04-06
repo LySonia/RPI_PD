@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00004534  080001e0  080001e0  000011e0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000048  08004714  08004714  00005714  2**2
+  2 .rodata       0000005c  08004714  08004714  00005714  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  0800475c  0800475c  00006068  2**0
+  3 .ARM.extab    00000000  08004770  08004770  00006068  2**0
                   CONTENTS, READONLY
-  4 .ARM          00000008  0800475c  0800475c  0000575c  2**2
+  4 .ARM          00000008  08004770  08004770  00005770  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08004764  08004764  00006068  2**0
+  5 .preinit_array 00000000  08004778  08004778  00006068  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08004764  08004764  00005764  2**2
+  6 .init_array   00000004  08004778  08004778  00005778  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  08004768  08004768  00005768  2**2
+  7 .fini_array   00000004  0800477c  0800477c  0000577c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000068  20000000  0800476c  00006000  2**2
+  8 .data         00000068  20000000  08004780  00006000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000230  20000068  080047d4  00006068  2**2
+  9 .bss          00000230  20000068  080047e8  00006068  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  20000298  080047d4  00006298  2**0
+ 10 ._user_heap_stack 00000600  20000298  080047e8  00006298  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00006068  2**0
                   CONTENTS, READONLY
@@ -313,7 +313,7 @@ int main(void)
  8000392:	687b      	ldr	r3, [r7, #4]
  8000394:	3301      	adds	r3, #1
  8000396:	607b      	str	r3, [r7, #4]
-	  printf("%d\n", c);
+	  printf("Hello World! :O) %d\n", c);
  8000398:	6879      	ldr	r1, [r7, #4]
  800039a:	4802      	ldr	r0, [pc, #8]	@ (80003a4 <main+0x34>)
  800039c:	f003 fb46 	bl	8003a2c <iprintf>
@@ -933,6 +933,7 @@ static void MX_GPIO_Init(void)
 08000704 <__io_putchar>:
 
 /* USER CODE BEGIN 4 */
+// Code below nrequired for serial printing
 int __io_putchar(int ch)
 {
  8000704:	b580      	push	{r7, lr}
@@ -1793,7 +1794,7 @@ LoopForever:
   ldr r1, =_edata
  8000ad8:	20000068 	.word	0x20000068
   ldr r2, =_sidata
- 8000adc:	0800476c 	.word	0x0800476c
+ 8000adc:	08004780 	.word	0x08004780
   ldr r2, =_sbss
  8000ae0:	20000068 	.word	0x20000068
   ldr r4, =_ebss
@@ -7757,7 +7758,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(const RCC_ClkInitTypeDef  *RCC_ClkInitStru
  8002f2c:	40022000 	.word	0x40022000
  8002f30:	40021000 	.word	0x40021000
  8002f34:	04c4b400 	.word	0x04c4b400
- 8002f38:	08004718 	.word	0x08004718
+ 8002f38:	0800472c 	.word	0x0800472c
  8002f3c:	20000000 	.word	0x20000000
  8002f40:	20000004 	.word	0x20000004
 
@@ -9737,10 +9738,10 @@ ErrorStatus LL_GPIO_Init(GPIO_TypeDef *GPIOx, LL_GPIO_InitTypeDef *GPIO_InitStru
  8003bb2:	4798      	blx	r3
  8003bb4:	3601      	adds	r6, #1
  8003bb6:	e7f2      	b.n	8003b9e <__libc_init_array+0x1e>
- 8003bb8:	08004764 	.word	0x08004764
- 8003bbc:	08004764 	.word	0x08004764
- 8003bc0:	08004764 	.word	0x08004764
- 8003bc4:	08004768 	.word	0x08004768
+ 8003bb8:	08004778 	.word	0x08004778
+ 8003bbc:	08004778 	.word	0x08004778
+ 8003bc0:	08004778 	.word	0x08004778
+ 8003bc4:	0800477c 	.word	0x0800477c
 
 08003bc8 <__retarget_lock_init_recursive>:
  8003bc8:	4770      	bx	lr
@@ -10238,11 +10239,11 @@ ErrorStatus LL_GPIO_Init(GPIO_TypeDef *GPIOx, LL_GPIO_InitTypeDef *GPIO_InitStru
  8004020:	f000 f87a 	bl	8004118 <_printf_i>
  8004024:	e7e5      	b.n	8003ff2 <_vfiprintf_r+0x1de>
  8004026:	bf00      	nop
- 8004028:	08004728 	.word	0x08004728
- 800402c:	08004732 	.word	0x08004732
+ 8004028:	0800473c 	.word	0x0800473c
+ 800402c:	08004746 	.word	0x08004746
  8004030:	00000000 	.word	0x00000000
  8004034:	08003def 	.word	0x08003def
- 8004038:	0800472e 	.word	0x0800472e
+ 8004038:	08004742 	.word	0x08004742
 
 0800403c <_printf_common>:
  800403c:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -10576,8 +10577,8 @@ ErrorStatus LL_GPIO_Init(GPIO_TypeDef *GPIOx, LL_GPIO_InitTypeDef *GPIO_InitStru
  8004354:	f104 0619 	add.w	r6, r4, #25
  8004358:	e7f5      	b.n	8004346 <_printf_i+0x22e>
  800435a:	bf00      	nop
- 800435c:	08004739 	.word	0x08004739
- 8004360:	0800474a 	.word	0x0800474a
+ 800435c:	0800474d 	.word	0x0800474d
+ 8004360:	0800475e 	.word	0x0800475e
 
 08004364 <__sflush_r>:
  8004364:	f9b1 200c 	ldrsh.w	r2, [r1, #12]

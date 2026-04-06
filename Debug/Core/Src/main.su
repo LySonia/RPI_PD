@@ -7,5 +7,5 @@
 ../Core/Src/main.c:230:13:MX_I2C3_Init	8	static
 ../Core/Src/main.c:278:13:MX_UCPD1_Init	32	static
 ../Core/Src/main.c:319:13:MX_GPIO_Init	48	static
-../Core/Src/main.c:370:5:__io_putchar	16	static
-../Core/Src/main.c:382:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:371:5:__io_putchar	16	static
+../Core/Src/main.c:383:6:Error_Handler	4	static,ignoring_inline_asm
