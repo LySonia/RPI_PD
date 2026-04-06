@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,6 +97,8 @@ int main(void)
   MX_UCPD1_Init();
   /* USER CODE BEGIN 2 */
 
+  int c = 3;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -106,6 +108,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  c++;
+	  printf("%d\n", c);
   }
   /* USER CODE END 3 */
 }
@@ -363,7 +367,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+int __io_putchar(int ch)
+{
+ // Write character to ITM ch.0
+ ITM_SendChar(ch);
+ return(ch);
+}
 /* USER CODE END 4 */
 
 /**
