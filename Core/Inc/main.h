@@ -28,6 +28,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32g4xx_hal.h"
+
 #include "stm32g4xx_ll_ucpd.h"
 #include "stm32g4xx_ll_bus.h"
 #include "stm32g4xx_ll_cortex.h"
@@ -68,6 +69,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define FLG_Pin GPIO_PIN_2
+#define FLG_GPIO_Port GPIOC
+#define EN_Pin GPIO_PIN_3
+#define EN_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 
